@@ -1,2 +1,8 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>This is an edit page</h1>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.input :email %>
+  <%= f.button :submit %>
+<% end %>

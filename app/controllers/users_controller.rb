@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.new(user_params)
     if @user.save
       redirect_to users_path(@user)
     else
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
 
   def update
     @user.update(user_params)
+    redirect_to user_path(@user)
   end
 
   def destroy

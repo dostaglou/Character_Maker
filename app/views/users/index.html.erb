@@ -1,2 +1,12 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>This is all users</h1>
+<div>
+  <% @users.each do |user| %>
+  <%= link_to user.username, user_path(user) %>
+    <%= user.email %>
+    <%= user.password %>
+    <%= link_to "edit me", edit_user_path(user)  %>
+    <%= link_to "delete me", user_path(user), method: :delete %>
+    <br>
+    <br>
+  <% end  %>
+</div>
