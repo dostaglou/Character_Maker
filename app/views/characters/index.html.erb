@@ -1,2 +1,11 @@
-<h1>Characters#index</h1>
-<p>Find me in app/views/characters/index.html.erb</p>
+<h1>THIS IS THE CHARACTERS of USER PAGE</h1>
+
+<% @chars.each do |char| %>
+  <%= char.name %>
+  <%= link_to "edit me", edit_user_character_path %>
+<br>
+<br>
+
+<%= link_to "home page", users_path %>
+
+<% end %>

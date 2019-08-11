@@ -1,2 +1,15 @@
-<h1>Characters#edit</h1>
-<p>Find me in app/views/characters/edit.html.erb</p>
+<h1>Editting a Characte of a User</h1>
+
+<%= simple_form_for [@user, @character] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :allies %>
+  <%= f.input :enemies %>
+  <%= f.association :race %>
+  <%= f.submit %>
+<% end %>
+
+<br>
+<br>
+
+<%= link_to "user", user_path(@user) %>

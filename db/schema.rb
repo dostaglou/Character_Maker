@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_10_144544) do
+ActiveRecord::Schema.define(version: 2019_08_11_115102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,38 @@ ActiveRecord::Schema.define(version: 2019_08_10_144544) do
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
+  create_table "eyes", force: :cascade do |t|
+    t.string "eye_color"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genders", force: :cascade do |t|
+    t.string "gender_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hair_colors", force: :cascade do |t|
+    t.string "hair_color_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hair_types", force: :cascade do |t|
+    t.string "hair_type_value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "professions", force: :cascade do |t|
+    t.string "job"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "races", force: :cascade do |t|
-    t.string "race"
+    t.string "race_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +68,12 @@ ActiveRecord::Schema.define(version: 2019_08_10_144544) do
     t.string "username"
     t.string "email"
     t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wealths", force: :cascade do |t|
+    t.string "wealth_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

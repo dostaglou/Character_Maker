@@ -5,4 +5,18 @@
 <br>
 <br>
 
+<% if @user.characters.count > 0 %>
+  <% @user.characters.all.each do |char| %>
+    <%= link_to char.name, user_character_path(@user, char) %>
+    <%= link_to "edit me", edit_user_character_path(@user, char) %>
+    <%= link_to "delete me", user_character_path(@user, char), method: :delete %>
+    <br>
+
+
+
+  <% end %>
+<% end %>
+
+<br>
+<br>
 <%= link_to "home", users_path %>

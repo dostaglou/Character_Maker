@@ -1,2 +1,13 @@
-<h1>Characters#show</h1>
-<p>Find me in app/views/characters/show.html.erb</p>
+<h1>This is the SINGLE character of USER page</h1>
+
+<%= @character.name %>
+<br>
+<br>
+<%= link_to "user-page", user_path(@character.user) %>
+<br>
+<br>
+<%= link_to "edit me", edit_user_character_path %>
+<br>
+<br>
+
+<%= link_to "home page", users_path %>
