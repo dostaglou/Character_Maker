@@ -9,22 +9,25 @@ a {
   background: blue;
 }
 
-.font1 {
-  font-family: 'Yesteryear', cursive;
-}
 
-.font2 {
-  font-family: 'Rochester', cursive;
-}
 
 .font3 {
+  h1, h2, h3 {
   font-family: 'Lovers Quarrel', cursive;
+  font-size: 4em;
+  }
 }
 
 .font4 {
+  h1, h2, h3 {
   font-family: 'Calligraffitti', cursive;
+  font-size: 3em;
+}
 }
 
 .font5 {
+  h1, h2, h3 {
   font-family: 'Niconne', cursive;
+  font-size: 3em;
+  }
 }
