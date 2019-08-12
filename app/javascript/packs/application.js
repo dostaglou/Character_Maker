@@ -20,3 +20,5 @@ console.log("From the app.js")
 import 'bootstrap';
 import { addClickFeature } from "../components/addEventListener";
 addClickFeature();
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+initUpdateNavbarOnScroll();
