@@ -45,6 +45,7 @@ eighteen.save!
     gender_id: 1,
     profession_id: 1
   )
+  char.save!
 end
 
 users.each do |x|
