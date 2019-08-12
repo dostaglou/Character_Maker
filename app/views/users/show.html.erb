@@ -15,6 +15,12 @@
           <% @user.characters.each do |char| %>
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("female-face.jpg") %>);">
             <%= char.name %>
+            <%= link_to edit_user_character_path(@user, char), class:"card-edit" do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
+            <%= link_to user_character_path(@user, char), data: { confirm:"are you sure?" }, method: :delete, class:"card-delete" do %>
+              <i class="fas fa-ban"></i>
+            <% end %>
             </div>
           <% end  %>
           <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("female-face.jpg") %>);">

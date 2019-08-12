@@ -11,7 +11,7 @@
 
   <% @users.each do |user| %>
     <div>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("male-face.jpg") %>);">
+      <div class="card-category" style="background-image: url(<%= image_url("male-face.jpg") %>);">
         <%= link_to user.username, user_path(user), class:"card-link" %>
         <%= link_to edit_user_path(user), class:"card-edit" do %>
           <i class="fas fa-edit"></i>
