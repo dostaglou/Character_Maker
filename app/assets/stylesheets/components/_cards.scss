@@ -4,7 +4,6 @@
   background-size: cover;
   background-position: center;
   min-height: 180px;
-  // min-width: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +84,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  margin: 8px;
+  padding: 8px;
 }
 
 .cards-chars {
