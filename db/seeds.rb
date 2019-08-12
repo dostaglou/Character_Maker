@@ -21,6 +21,32 @@ professions.each do |x|
   one.save!
 end
 
+zero = User.new(
+  username: "zero",
+  password: 'password',
+  email: 'dostaglou@gmail.com'
+)
+zero.save!
+
+eighteen = User.new(
+  username: "eighteen",
+  password: 'password',
+  email: 'dostaglou@gmail.com'
+)
+eighteen.save!
+18.times do
+  char = Character.new(
+    name: Faker::Movies::LordOfTheRings.character,
+    description: 'Tall dark and mysterious. From a world unknown to us all and with an appetite for violence that would shock even the vilest of murderers',
+    allies: Faker::Movies::LordOfTheRings.character,
+    enemies: Faker::Movies::LordOfTheRings.character,
+    user_id: eighteen.id,
+    race_id: 1,
+    gender_id: 1,
+    profession_id: 1
+  )
+end
+
 users.each do |x|
   one = User.new(
     username: x,
