@@ -1,10 +1,14 @@
-<h1>This is an edit page</h1>
-
-<%= simple_form_for @user do |f| %>
-  <%= f.input :username %>
-  <%= f.input :password %>
-  <%= f.input :email %>
-  <%= f.button :submit %>
-<% end %>
-
-<%= link_to "home", users_path %>
+<div class="hund-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("tavern.jpg") %>);"> >
+  <div class="user-form-container">
+    <h1 class="styled-font">Tell us about yourself, Adventurer!</h1>
+    <%= simple_form_for @user, class:"font-whites" do |f| %>
+    <%= f.input :username, label_html: { class:"font-white font-bigger" }%>
+    <%= f.input :password, label_html: { class:"font-white font-bigger" } %>
+    <%= f.input :email, label_html: { class:"font-white font-bigger" } %>
+    <div class="flx-container space-between">
+    <%= f.button :submit, class:"dbtn-ghost" %>
+    <%= link_to "return", users_path, class:"dbtn-ghost" %>
+    </div>
+    <% end %>
+  </div>
+</div>
