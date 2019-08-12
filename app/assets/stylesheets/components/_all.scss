@@ -9,25 +9,21 @@ a {
   background: blue;
 }
 
-
-
-.font3 {
-  h1, h2, h3 {
-  font-family: 'Lovers Quarrel', cursive;
-  font-size: 4em;
-  }
-}
-
-.font4 {
-  h1, h2, h3 {
-  font-family: 'Calligraffitti', cursive;
+.styled-font {
+  font-family: 'Niconne', cursive;
   font-size: 3em;
-}
-}
-
-.font5 {
+  color: white;
   h1, h2, h3 {
   font-family: 'Niconne', cursive;
   font-size: 3em;
+  color: white;
   }
+}
+
+.font-white {
+  color:white;
+}
+
+.font-bigger {
+  font-size: 1.5em;
 }
