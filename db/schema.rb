@@ -10,44 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_11_115102) do
+ActiveRecord::Schema.define(version: 2019_08_11_150555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "characters", force: :cascade do |t|
+    t.string "name"
     t.string "allies"
     t.string "enemies"
     t.text "description"
     t.bigint "user_id"
     t.bigint "race_id"
+    t.bigint "gender_id"
+    t.bigint "profession_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
+    t.index ["gender_id"], name: "index_characters_on_gender_id"
+    t.index ["profession_id"], name: "index_characters_on_profession_id"
     t.index ["race_id"], name: "index_characters_on_race_id"
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
-  create_table "eyes", force: :cascade do |t|
-    t.string "eye_color"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "genders", force: :cascade do |t|
     t.string "gender_value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "hair_colors", force: :cascade do |t|
-    t.string "hair_color_value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "hair_types", force: :cascade do |t|
-    t.string "hair_type_value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_08_11_115102) do
   end
 
   create_table "races", force: :cascade do |t|
-    t.string "race_name"
+    t.string "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -72,12 +58,8 @@ ActiveRecord::Schema.define(version: 2019_08_11_115102) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "wealths", force: :cascade do |t|
-    t.string "wealth_value"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  add_foreign_key "characters", "genders"
+  add_foreign_key "characters", "professions"
   add_foreign_key "characters", "races"
   add_foreign_key "characters", "users"
 end

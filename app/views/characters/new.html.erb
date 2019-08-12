@@ -5,7 +5,10 @@
   <%= f.input :description %>
   <%= f.input :allies %>
   <%= f.input :enemies %>
-  <%= f.association :race %>
+  <%= f.association :race, label_method: :value %>
+  <%= f.association :gender, label_method: :gender_value %>
+  <%= f.association :profession, label_method: :job %>
+
   <%= f.submit %>
 <% end %>
 

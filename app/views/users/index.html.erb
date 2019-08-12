@@ -1,12 +1,25 @@
-<h1>This is all users</h1>
-<div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("Fantasy-banner.jpg") %>);">
+  <div class="container">
+    <h1>Character Maker</h1>
+    <p>Click, Add, Play</p>
+    <%= link_to "Start Now", new_user_path, class:"btn-gradient" %>
+  </div>
+</div>
+
+<div class="cards">
+
   <% @users.each do |user| %>
-  <%= link_to user.username, user_path(user) %>
-    <%= user.email %>
-    <%= user.password %>
-    <%= link_to "edit me", edit_user_path(user)  %>
-    <%= link_to "delete me", user_path(user), method: :delete %>
-    <br>
-    <br>
+    <div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("male-face.jpg") %>);">
+      <%= link_to user.username, user_path(user), class:"card-link" %>
+        <%= link_to edit_user_path(user), class:"card-edit" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+        <%= link_to user_path(user), method: :delete, class:"card-delete" do %>
+          <i class="fas fa-ban"></i>
+        <% end %>
+      </div>
+    </div>
   <% end  %>
 </div>
+

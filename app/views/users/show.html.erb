@@ -1,22 +1,31 @@
-<%= @user.username %>
-<br>
-<br>
-<%= link_to "add a character", new_user_character_path(@user) %>
-<br>
-<br>
+<div class="hund-container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("tavern.jpg") %>);"> >
 
-<% if @user.characters.count > 0 %>
-  <% @user.characters.all.each do |char| %>
-    <%= link_to char.name, user_character_path(@user, char) %>
-    <%= link_to "edit me", edit_user_character_path(@user, char) %>
-    <%= link_to "delete me", user_character_path(@user, char), method: :delete %>
-    <br>
+  <div class="ninefivew-container">
+    <!-- Text Goes here -->
+    <h1>Welcome Adventurer!</h1>
+    <h3>Here lies <%= "#{@user.username}'s" %> tome of legends</h3>
+    <p>Within these pages you shall find a story known only to a few</p>
 
+    <div class="display-boxes">
+      <div><!-- Cards go in here-->
+        <!-- Loop below -->
+        <div class="cards-chars" >
+          <% @user.characters.each do |char| %>
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("female-face.jpg") %>);">
+            <%= char.name %>
+            </div>
+          <% end  %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_url("female-face.jpg") %>);">
+          <%= link_to "add a character", new_user_character_path(@user) %>
+          </div>
+        </div>
+      </div>
+        <!-- BIG char display goes here -->
+      <div  class="eight-container" style="background-image: url(<%= image_url("tome-page.jpg") %>">
+        <h1 >THIS IS FOR THE SINGLE CHARACTER DISPLAY</h1>
+      </div>
+    </div>
 
+  </div>
+</div>
 
-  <% end %>
-<% end %>
-
-<br>
-<br>
-<%= link_to "home", users_path %>
