@@ -6,7 +6,8 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    # @chars = @user.characters
+    # render :json => @chars
   end
 
   def new

@@ -15,4 +15,8 @@
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+console.log("From the app.js")
+
 import 'bootstrap';
+import { addClickFeature } from "../components/addEventListener";
+addClickFeature();

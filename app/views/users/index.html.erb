@@ -15,7 +15,7 @@
         <%= link_to edit_user_path(user), class:"card-edit" do %>
           <i class="fas fa-edit"></i>
         <% end %>
-        <%= link_to user_path(user), method: :delete, confirm:"are you sure?", class:"card-delete" do %>
+        <%= link_to user_path(user), data: { confirm:"are you sure?" }, method: :delete, class:"card-delete" do %>
           <i class="fas fa-ban"></i>
         <% end %>
       </div>
