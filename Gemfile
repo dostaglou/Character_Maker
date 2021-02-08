@@ -63,7 +63,7 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'faker', '~> 2.1', '>= 2.1.2'
 # app/uploaders/photo_uploader.rb
 # class PhotoUploader < CarrierWave::Uploader::Base
